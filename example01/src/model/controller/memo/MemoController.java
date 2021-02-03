@@ -67,8 +67,8 @@ public class MemoController extends HttpServlet {
 
 		} else if (url.indexOf("list.do") != -1) {
 			MemoDAO dao = new MemoDAO();
-			int pageSize = 5;
-			int blockSize = 10;
+			int pageSize = 1;
+			int blockSize = 5;
 			int totalRecord = dao.getTotalRecord();
 			int number = totalRecord - pageSize * (pageNumber - 1);
 			int startRecord = pageSize * (pageNumber - 1) + 1;

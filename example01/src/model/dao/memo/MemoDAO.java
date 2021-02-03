@@ -110,7 +110,6 @@ public class MemoDAO {
 			basicSql += "select * from memo where no > 0 order by no desc";
 			String sql = "";
 			sql += "select * from (select A.*, rownum rnum from (" + basicSql + ") A) where rnum >=? and rnum<=? ";
-			System.out.println(sql);
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, startRecord);
 			pstmt.setInt(2, lastRecord);
