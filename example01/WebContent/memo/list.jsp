@@ -15,7 +15,7 @@
 </head>
 <body>
 
-   <table border="1" align="center">
+   <table border="1">
    <tr>
       <td>No</td>
       <td>이름</td>
@@ -56,7 +56,7 @@
 <script type="text/javascript">
 function GoPage(value1,value2,value3){
    if(value1 =="memo_list"){
-      location.href="${path}/memo_servlet/write.do?pageNumber="+value2+"&no="+value3;
+      location.href="${path}/memo_servlet/write.do?pageNumber="+value2;
    }
 }   
 </script>

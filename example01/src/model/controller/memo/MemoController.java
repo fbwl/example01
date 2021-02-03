@@ -16,19 +16,22 @@ import model.dto.memo.MemoDTO;
 @WebServlet("/memo_servlet/*")
 public class MemoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doProc(request, response);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doProc(request, response);
 	}
 
-	protected void doProc(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doProc(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String path = request.getContextPath();
 		String url = request.getRequestURL().toString();
-		String page = "/main/main.jsp";
+		String page = "/memo/write.jsp";
 
 		String pageNumber_;
 		pageNumber_ = request.getParameter("pageNumber");
@@ -67,8 +70,8 @@ public class MemoController extends HttpServlet {
 
 		} else if (url.indexOf("list.do") != -1) {
 			MemoDAO dao = new MemoDAO();
-			int pageSize = 1;
-			int blockSize = 5;
+			int pageSize = 5;
+			int blockSize = 10;
 			int totalRecord = dao.getTotalRecord();
 			int number = totalRecord - pageSize * (pageNumber - 1);
 			int startRecord = pageSize * (pageNumber - 1) + 1;

@@ -38,7 +38,6 @@ function insert(){
    });
 }
 function list(){
-   var param = "search_gubun=&sdata="
    $.ajax({
       type: "post",
       data: " ",
